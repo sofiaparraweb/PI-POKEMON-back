@@ -30,7 +30,7 @@ const getAllPokemons = async (req, res) => {
   const { name } = req.query;  // Obtener el parámetro de consulta 'name'
 
   try {
-    const apiResponse = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=200');  // Obtener la lista de Pokémon desde la API externa
+    const apiResponse = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=50');  // Obtener la lista de Pokémon desde la API externa
     const pokemonApi = await Promise.all(apiResponse.data.results.map(async (pk) => {
       return await getPokemonDetails(pk.url);  // Obtener los detalles de cada Pokémon desde su URL correspondiente
     }));

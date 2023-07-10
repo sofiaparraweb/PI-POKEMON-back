@@ -18,7 +18,7 @@ describe('Pokemon routes', () => {
     .then(() => Pokemon.create(pokemon)));
 
   describe('GET /pokemons', () => {
-    it('should get 200', function(done) {
+    it('should get 50', function(done) {
       this.timeout(5000);
   
       agent.get('/pokemons').expect(200, done);
